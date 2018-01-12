@@ -1,0 +1,32 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx build --win",
+    "publish": "npx build --win -p always"
+  },
+  "keywords": [],
+  "author": "Bruce Hsu",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.10",
+    "electron-builder": "^19.52.1"
+  },
+  "dependencies": {
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.18.2",
+    "nedb": "^1.8.0"
+  },
+  "build": {
+    "appId": "com.meproz.todo",
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  }
+}
