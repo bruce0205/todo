@@ -69,7 +69,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
     sendStatusToWindow('Update downloaded');
-    app.relaunch();
+    autoUpdater.quitAndInstall();
 });
 app.on('ready', function () {
     const menu = Menu.buildFromTemplate(template);
@@ -87,4 +87,10 @@ app.on('ready', function () {
 
 ipcMain.on("quitApp", (event, arg) => {
     app.quit();
+})
+
+ipcMain.on("restartApp", (event, arg) => {
+    log.info('restartApp()...')
+    app.quit();
+    app.relaunch();
 })
