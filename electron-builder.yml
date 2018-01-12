@@ -1,0 +1,4 @@
+appId: com.meproz.todo
+publish:
+    provider: github
+    token: 8443f183db5b81257e3d5187665f4617cae69bb2

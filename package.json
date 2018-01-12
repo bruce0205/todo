@@ -1,6 +1,6 @@
 {
   "name": "todo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -24,8 +24,7 @@
     "appId": "com.meproz.todo",
     "win": {
       "target": [
-        "nsis",
-        "zip"
+        "nsis"
       ]
     }
   }

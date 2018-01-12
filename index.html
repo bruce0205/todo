@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Electron Demo</title>
@@ -6,7 +7,9 @@
   <link rel="stylesheet" href="css/index.css">
   <script type="text/javascript" src="js/index.js"></script>
 </head>
+
 <body>
+  <div id="messages"></div>
   <div class="container">
 
     <h3>Add a person:</h3>
@@ -48,6 +51,15 @@
         location.reload();
       }
     });
-</script>
+
+    const { ipcRenderer } = require('electron');
+    ipcRenderer.on('message', function (event, text) {
+      var container = document.getElementById('messages');
+      var message = document.createElement('div');
+      message.innerHTML = text;
+      container.appendChild(message);
+    });
+  </script>
 </body>
+
 </html>
