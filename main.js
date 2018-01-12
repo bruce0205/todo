@@ -84,3 +84,7 @@ app.on('window-all-closed', () => {
 app.on('ready', function () {
     autoUpdater.checkForUpdatesAndNotify();
 });
+
+ipcMain.on("quitApp", (event, arg) => {
+    app.quit();
+})
