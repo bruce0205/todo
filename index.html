@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  Current version:
+  <span id="version">vX.Y.Z</span>
   <div id="messages"></div>
   <div class="container">
 
@@ -51,6 +53,9 @@
         location.reload();
       }
     });
+
+    let version = window.location.hash.substring(1);
+    document.getElementById('version').innerText = version;
 
     const { ipcRenderer } = require('electron');
     ipcRenderer.on('message', function (event, text) {

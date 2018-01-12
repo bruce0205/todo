@@ -6,7 +6,6 @@ autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
 
-let win;
 let template = []
 if (process.platform === 'darwin') {
     const name = app.getName();
@@ -25,6 +24,7 @@ if (process.platform === 'darwin') {
         ]
     })
 }
+let win;
 
 function sendStatusToWindow(text) {
     log.info(text);
